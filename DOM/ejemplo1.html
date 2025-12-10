@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1 - Hello World JS</title>
+</head>
+<body>
+    <h1 id="titulo">Aprendiendo JavaScript</h1>
+    <p>Hola Mundo!</p>
+    <p id="info">Esta página es <strong>muy simple</strong></p>
+    <span class="importante">Esto es muy importante</span>
+    <script>
+        let titulo = document.getElementById("titulo");
+        console.log("Elemento con Id=titulo: "+ titulo );
+
+        let elemento = document.getElementById("info");
+        console.log("nodeName: " + elemento.nodeName);
+        console.log("textContent: " + elemento.textContent);
+        console.log("innerHTML: " + elemento.innerHTML);
+        console.log("outerHTML: " + elemento.outerHTML);
+
+        elemento.outerHTML="<h3 id='info'>AHORA SOY UN <strong>TITULO</strong></h3>";
+        elemento.innerHTML="AHORA SOY UN <em>TITULO</em>";
+        elemento.textContent="AHORA SOY UN <em>TITULO</em>";
+        elemento.textContent="Solo texto!!!";
+
+
+    </script>
+ </body>
+</html>
