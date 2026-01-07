@@ -4,112 +4,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recursos DAM1 - Alicia Vázquez</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@300;400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Portfolio - Alicia Vázquez</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <h1>Java Script</h1>
-        <p>Recopilación de recursos para M04 y M09</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">AliciaFPInf</a>
+            <ul class="nav-links">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#temas">M04</a></li>
+                <li><a href="#temas">M09</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="sobre-mi">
+        <div class="hero-content">
+            <h1>Bienvenido a mi repositorio</h1>
+            <p class="subtitle">Recopilación de apuntes y prácticas de JavaScript</p>
+            <p class="description">
+                Aquí encontrarás los ejercicios realizados para los módulos <strong>M04</strong> y <strong>M09</strong>
+                del ciclo DAM01 en el ITB. Un espacio ordenado para documentar mi aprendizaje.
+            </p>
+        </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="temas">
+        <div class="cards-grid">
 
-        <article class="card">
-            <span class="tag m04">M04</span>
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x350/34495e/white?text=DOM" alt="Tema DOM">
+                    <span class="tag tag-m04">M04</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>El DOM</h3>
+                        <span class="topic">Selectores</span>
+                    </div>
+                    <p class="text">
+                        Aprendiendo a seleccionar elementos del HTML usando getElementById y querySelector y manipular
+                        sus estilos y clases.
+                    </p>
+                    <h5 class="section-title">Ejemplos de Clase</h5>
+                    <ul class="list-styled list-examples">
+                        <li><a href="M04_DOM/ejemplo1.html">Ejemplo 1</a></li>
+                    </ul>
+                    <h5 class="section-title">Ejercicios</h5>
+                    <ul class="list-styled list-exercises">
+                        <li><a href="M04_DOM/eje01.html">Ejercicio 1: Hacker</a></li>
+                        <li><a href="#">Ejercicios de exámenes anteriores</a></li>
+                        <li><a href="#">Teclado alfanúmerico</a></li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="M04_DOM/Document Object Model.pdf"
+                        class="btn btn-secondary">Apuntes</a>
+                    <a href="#" class="btn btn-primary">GitHub</a>
+                </div>
+            </article>
 
-            <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=600&q=80"
-                alt="Código JS" class="card-img-top">
-
-            <div class="card-body">
-                <h3 class="card-title">El DOM (Document Object Model)</h3>
-                <p class="card-text">
-                    Introducción a la manipulación del árbol HTML mediante JavaScript. Seleccionar elementos, crear
-                    nuevos elementos y modificar los atributos de los elementos.
-                </p>
-                <ul class="resource-list">
-                    <li>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank"
-                            class="resource-link">
-                            <span class="icon">📚</span>
-                            <span class="text">Documentación MDN del DOM</span>
-                            <span class="arrow">→</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank" class="resource-link">
-                            <span class="icon">📚</span>
-                            <span class="text">W3Schools de DOM</span>
-                            <span class="arrow">→</span>
-                        </a>
-                    </li>
-                    <li>
-                        <span class="icon">💻</span>
-                        <span class="text">Ejercicios y ejemplos</span>
-                        
-                        <ol>
-                            <li><a href="DOM/ejemplo1.html" target="_blank" class="resource-link github">
-                                    Ejemplo 1
-                                </a></li>
-                            <li><a href="DOM/ejemplo1.html" target="_blank" class="resource-link github">
-                                    Ejercicio 1
-                                </a></li>
-                        </ol>
-
-
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card-actions">
-                <a href="https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction"
-                    target="_blank" class="btn">
-                    <i class="fas fa-link"></i> MDN Web Docs
-                </a>
-                <a href="https://docs.google.com/presentation/d/1qasE7UtIEEQmP7Zwumoj9qRlEvXJPfsF8s2o6eDj2DQ/edit?usp=sharing"
-                    class="btn btn-notes">
-                    <i class="fas fa-file-pdf"></i> Apuntes
-                </a>
-            </div>
-        </article>
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x350/2c3e50/white?text=Sintaxis+JS" alt="Tema JS">
+                    <span class="tag tag-m04">M04</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Fundamentos</h3>
+                        <span class="topic">Variables y Tipos</span>
+                    </div>
+                    <p class="text">
+                        Introducción a la declaración de variables (let, const), tipos de datos primitivos y operadores
+                        básicos.
+                    </p>
+                    <ul class="links">
+                        <li><a href="#">Ejercicio 1: Variables</a></li>
+                        <li><a href="#">Ejercicio 2: Operadores</a></li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-secondary">Apuntes</a>
+                    <a href="#" class="btn btn-primary">GitHub</a>
+                </div>
+            </article>
 
 
-        <!--  <article class="card">
-            <span class="tag m09">M09</span>
 
-            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=600&q=80"
-                alt="Diseño UI" class="card-img-top">
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x350/1abc9c/white?text=Eventos" alt="Tema Eventos">
+                    <span class="tag tag-m09">M09</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Eventos</h3>
+                        <span class="topic">Interacción</span>
+                    </div>
+                    <p class="text">
+                        Gestión de clicks, inputs de teclado y formularios. Cómo hacer la web interactiva con
+                        addEventListener.
+                    </p>
+                    <ul class="links">
+                        <li><a href="#">Contador de clicks</a></li>
+                        <li><a href="#">Validar Email</a></li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-secondary">Apuntes</a>
+                    <a href="#" class="btn btn-primary">GitHub</a>
+                </div>
+            </article>
 
-            <div class="card-body">
-                <h3 class="card-title">Principios de Usabilidad</h3>
-                <p class="card-text">
-                    Conceptos básicos de diseño de interfaces. Heurísticas de Nielsen y cómo aplicarlas a prototipos
-                    web.
-                </p>
-            </div>
+            <article class="card">
+                <div class="card-image">
+                    <img src="https://placehold.co/600x350/2980b9/white?text=Arrays" alt="Tema Arrays">
+                    <span class="tag tag-m04">M04</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Arrays</h3>
+                        <span class="topic">Colecciones</span>
+                    </div>
+                    <p class="text">
+                        Métodos para recorrer, filtrar y transformar listas de datos. Map, Filter y Reduce.
+                    </p>
+                    <ul class="links">
+                        <li><a href="#">Lista de tareas</a></li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-secondary">Apuntes</a>
+                    <a href="#" class="btn btn-primary">GitHub</a>
+                </div>
+            </article>
 
-            <div class="card-actions">
-                <a href="https://www.nngroup.com/" target="_blank" class="btn">
-                    <i class="fas fa-external-link-alt"></i> N. Norman
-                </a>
-                <a href="apuntes/tema1_m09.pdf" class="btn btn-notes">
-                    <i class="fas fa-download"></i> PDF
-                </a>
-            </div>
-        </article> -->
-
+        </div>
     </main>
 
-    <footer>
-        <p>Creado con <i class="fas fa-heart" style="color: var(--primary);"></i> por <strong>Alicia Vázquez</strong> |
-            Curso 2025-2026</p>
+    <footer id="contacto">
+        <div class="footer-content">
+            <p><strong>Alicia Vázquez</strong> | Desarrollo de Aplicaciones Multiplataforma</p>
+            <p>Contacto: <a href="mailto:alicia.vazquez@itb.cat">alicia.vazquez@itb.cat</a></p>
+            <div class="cc">
+                Licencia Creative Commons BY-NC-SA 4.0
+            </div>
+        </div>
     </footer>
 
 </body>
