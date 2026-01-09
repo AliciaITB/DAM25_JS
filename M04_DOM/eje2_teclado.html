@@ -27,7 +27,7 @@
     <h1 id="titulo">Ejercicio 1 - Teclado númerico</h1>
     <div id="contenedor">
         <!-- Aquí es dónde ira el teclado. -->
-     
+
     </div>
 
     <script>
@@ -38,14 +38,26 @@
          * 4. asignarlo al "cotenedor" (seleccionar el elemento) -- appendChild
          * 
         */
-        let contendor = document.getElementById("contenedor");
-        for (var i = 65; i <= 90; i++) {
-            let elemento = document.createElement("div");
-            elemento.textContent = String.fromCharCode(i);
-            elemento.className = "tecla";
+       let color="red";
+        function tecladoAlfabetico() {
+            let color = prompt("Color de fondo");
+            
+            let contendor = document.getElementById("contenedor");
+            for (let i = 65; i <= 90; i++) {
+                let elemento = document.createElement("div");
+                elemento.textContent = String.fromCharCode(i);
+                elemento.className = "tecla";
+                elemento.style.backgroundColor = color;
 
-            contendor.appendChild(elemento);
+                contendor.appendChild(elemento);
+                console.log(i);
+            }
+            
+
         }
+        
+        tecladoAlfabetico();
+        console.log(color);
 
 
     </script>
