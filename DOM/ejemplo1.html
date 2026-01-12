@@ -13,18 +13,20 @@
     <script>
         let titulo = document.getElementById("titulo");
         console.log("Elemento con Id=titulo: "+ titulo );
-
+        
         let elemento = document.getElementById("info");
+
         console.log("nodeName: " + elemento.nodeName);
         console.log("textContent: " + elemento.textContent);
         console.log("innerHTML: " + elemento.innerHTML);
         console.log("outerHTML: " + elemento.outerHTML);
 
-        elemento.outerHTML="<h3 id='info'>AHORA SOY UN <strong>TITULO</strong></h3>";
-        elemento.innerHTML="AHORA SOY UN <em>TITULO</em>";
-        elemento.textContent="AHORA SOY UN <em>TITULO</em>";
-        elemento.textContent="Solo texto!!!";
 
+       // elemento.outerHTML="<h3 id='info'>AHORA SOY UN <strong>TITULO</strong></h3>";
+       // elemento.innerHTML="AHORA SOY UN <em>TITULO</em>";
+        //elemento.textContent="AHORA SOY UN <em>TITULO</em>";
+        elemento.textContent="Solo texto!!!";
+        
 
     </script>
  </body>
