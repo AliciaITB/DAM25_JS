@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Teclado númerico</title>
+    <style>
+        .tecla {
+            width: 60px;
+            height: 60px;
+            background-color: aqua;
+            color: grey;
+            font-size: 40px;
+        }
+
+        #contenedor {
+            display: flex;
+            width: 600px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">Ejercicio 1 - Teclado númerico</h1>
+    <div id="contenedor">
+        <!-- Aquí es dónde ira el teclado. -->
+
+    </div>
+
+    <script>
+        /**
+         * 1. Crear un elemento div --. createElement
+         * 2. Poner un contenido texto. -- textContent
+         * 3. asignarle la clase/estilo -- className
+         * 4. asignarlo al "cotenedor" (seleccionar el elemento) -- appendChild
+         * 
+        */
+       let color="red";
+        function tecladoAlfabetico() {
+            let color = prompt("Color de fondo");
+            
+            let contendor = document.getElementById("contenedor");
+            for (let i = 65; i <= 90; i++) {
+                let elemento = document.createElement("div");
+                elemento.textContent = String.fromCharCode(i);
+                elemento.className = "tecla";
+                elemento.style.backgroundColor = color;
+
+                contendor.appendChild(elemento);
+                console.log(i);
+            }
+            
+
+        }
+        
+        tecladoAlfabetico();
+        console.log(color);
+
+
+    </script>
+</body>
+
+</html>
