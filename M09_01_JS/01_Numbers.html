@@ -19,19 +19,25 @@
 
 <body>
     <h1 id="titulo">Ejercicios - Tipo numbers</h1>
-    <div class="ejercicio">
+    <div id="eje1" class="ejercicio">
         <h3>Ejercicio 1</h3>
         <p>Haz una función que de dos números pasados por parámetros indica (saca por consola) cúal de ellos es mayor.
         </p>
         <div class="resultado">
             <!-- Aquí es dónde ira el teclado. -->
-            aqui el resultado
-
+            Resultado
+            <p></p>
         </div>
     </div>
 
     <script>
+        function muestraResultado(id, result) {
+            // let pResult = document.querySelector('#'+id+' .resultado p');
+            let pResult = document.querySelector(`#${id} .resultado p`);
+            pResult.textContent += result;
+        }
 
+        muestraResultado("eje1", "pepe");
     </script>
 </body>
 
