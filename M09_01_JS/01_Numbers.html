@@ -33,11 +33,75 @@
     <script>
         function muestraResultado(id, result) {
             // let pResult = document.querySelector('#'+id+' .resultado p');
+            //let pResult = document.querySelector(`#${id} .resultado p`);
+            let pResult = document.getElementById("pEje1");
+
+            pResult.textContent += result;
+        }
+
+        muestraResultado("eje1", "pepe");
+
+
+        function compara(num1, num2) {
+            //SANTI
+            let resultado;
+            if (num1 > num2) {
+                resultado = num1;
+            }
+            else {
+                resultado = num2;
+            }
+            return resultado;
+
+            //Buenas prácticas --> early return
+            if (num1 > num2) {
+                return num1;
+            }
+            return num2;
+
+            //Ternario JS
+            return num1 > num2 ? num1 : num2;
+        }
+        function muestraResultado(id, result) {
+            // let pResult = document.querySelector('#'+id+' .resultado p');
             let pResult = document.querySelector(`#${id} .resultado p`);
             pResult.textContent += result;
         }
 
         muestraResultado("eje1", "pepe");
+
+
+
+        function multiplica(num1, num2) {
+            let resultado = 0;
+            for (i = 1; i <= num1; i++) {
+                resultado += num2;
+            }
+            return resultado;
+        }
+
+        console.log(multiplica(2,3));
+
+        function moduloCalculo() {
+            let resultado = 0;
+            let modulo = 0;
+            let div = 0;
+            for (let i = 1; i < 10000; i++) {
+                div = i;
+                while (div >= 9) {
+                    modulo = div%10;
+                    div = parseInt(div/10);
+                    resultado+=modulo*modulo*modulo;
+                }
+                resultado+=multiplica(multiplica(div,div),div);
+                if(resultado==i){
+                    console.log("Bingo: "+resultado);
+                }
+                resultado = 0;
+            }
+        }
+
+        moduloCalculo();
     </script>
 </body>
 
