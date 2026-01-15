@@ -80,22 +80,32 @@
             return resultado;
         }
 
-        console.log(multiplica(2,3));
+        console.log(multiplica(2, 3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         function moduloCalculo() {
             let resultado = 0;
             let resto = 0;
+            let resto = 0;
             let div = 0;
-            for (let i = 1; i < 10000; i++) {
-                div = i;
-                while (div >= 9) {
-                    resto = div%10;
-                    div = parseInt(div/10);
-                    resultado+=resto*resto*resto;
-                }
-                resultado+=resto*resto*resto;
-                if(resultado==i){
-                    console.log("Bingo: "+resultado);
+            for (let i = 0; i < 10000; i++) {
+                resultado = calculaSumaPotencias(i);
+                if (resultado == i) {
+                    console.log("Bingo: " + resultado);
                 }
                 resultado = 0;
             }
@@ -103,6 +113,19 @@
 
 
         moduloCalculo();
+
+        function calculaSumaPotencias(div) {
+            let resto = 0;
+            let resultado = 0;
+            div = i;
+            while (div >= 9) {
+                resto = div % 10;
+                div = parseInt(div / 10);
+                resultado += resto * resto * resto;
+            }
+            resultado += (multiplica(div, div), div)
+            return resultado;
+        }
     </script>
 </body>
 
