@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Solución Gestión de Vehículos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Resultados del Filtrado de Coches</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let coches = [
+            ["seat", "Codoba", 1997, 10000],
+            ["Kia", "Sorento", 1994, 1000],
+            ["seat", "Todelo", 2000, 10000],
+            ["Fiat", "Bravo", 2010, 10200],
+            ["Fiat", "500", 2010, 10000],
+            ["Mercedes", "Calse B", 2001, 39000],
+            ["seat", "Ibiza", 1993, 10100],
+            ["Alfa Romeo", "Julieta", 2002, 10000],
+            ["Alfa Romeo", "159", 2002, 10400],
+            ["Mercedes", "Calse C", 2001, 1000],
+            ["Alfa Romeo", "147", 1990, 10500],
+            ["Fiat", "Punto", 1990, 999],
+            ["Citroen", "Saxo", 1980, 10300],
+            ["Renault", "Superc 5", 1980, 12000],
+            ["BWM", "M3", 2020, 1000],
+            ["Kia", "Picanto", 1990, 1000],
+            ["Alfa Romeo", "spider", 1970, 14500],
+            ["Mercedes", "Calse A", 1994, 60100],
+            ["Mercedes", "Calse D", 2011, 21221]
+        ];
+
+        const añoActual = new Date().getFullYear();
+
+        // Resolución utilizando encadenamiento de métodos
+        const resultado = coches
+            // 1. Filter: Marcas permitidas y antigüedad > 20 años
+            .filter(coche => {
+                const [marca, modelo, año] = coche;
+                const esMarcaValida = marca !== 'Alfa Romeo' && marca !== 'Kia';
+                const esAntiguo = (añoActual - año) > 20;
+                return esMarcaValida && esAntiguo;
+            })
+            // 2. Sort: Orden descendente por precio (índice 3)
+            .sort((a, b) => b[3] - a[3])
+            // 3. Map: Aplicar 20% de rebaja
+            .map(coche => {
+                // Creamos una copia para no mutar el original (Buena práctica)
+                let copiaCoche = [...coche];
+                copiaCoche[3] = copiaCoche[3] * 0.8; // Precio con rebaja
+                return copiaCoche;
+            });
+
+        // Mostrar en el DOM
+        const contenedor = document.getElementById('resultado');
+        resultado.forEach(c => {
+            const p = document.createElement('p');
+            p.textContent = `${c[0]} ${c[1]} (${c[2]}) - Precio rebajado: ${c[3].toFixed(2)}€`;
+            contenedor.appendChild(p);
+        });
+
+        console.log("Array Resultante:", resultado);
+    </script>
+</body>
+
+</html>

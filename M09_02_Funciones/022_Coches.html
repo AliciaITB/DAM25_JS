@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Flota - Nivel Inicial</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f9f9f9; }
+        .card { background: white; padding: 15px; margin: 10px 0; border-left: 5px solid #28a745; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 4px; }
+        .header { color: #333; border-bottom: 2px solid #28a745; padding-bottom: 10px; }
+        b { color: #d9534f; }
+    </style>
+</head>
+<body>
+    <h1 class="header">Vehículos Filtrados (Más de 20 años)</h1>
+    <div id="lista-coches"></div>
+
+    <script>
+        const coches = [
+            ["seat","Codoba",1997,10000], ["Kia","Sorento",1994,1000],
+            ["seat","Todelo",2000,10000], ["Fiat","Bravo",2010,10200],
+            ["Fiat","500",2010,10000], ["Mercedes","Calse B",2001,39000],
+            ["seat","Ibiza",1993,10100], ["Alfa Romeo","Julieta",2002,10000],
+            ["Alfa Romeo","159",2002,10400], ["Mercedes","Calse C",2001,1000],
+            ["Alfa Romeo","147",1990,10500], ["Fiat","Punto",1990,999],
+            ["Citroen","Saxo",1980,10300], ["Renault","Superc 5",1980,12000],
+            ["BWM","M3",2020,1000], ["Kia","Picanto",1990,1000],
+            ["Alfa Romeo","spider",1970,14500], ["Mercedes","Calse A",1994,60100],
+            ["Mercedes","Calse D",2011,21221]
+        ];
+
+        // Definimos el año de corte para el cálculo de antigüedad
+        const ANYO_ACTUAL = 2024; 
+
+        // PASO 1: Filtrar según las restricciones del enunciado
+        const cochesFiltrados = coches.filter(coche => {
+            const marca = coche[0];
+            const anyoFabricacion = coche[2];
+            const antiguedad = ANYO_ACTUAL - anyoFabricacion;
+
+            // Condición: No ser Alfa Romeo ni Kia Y tener más de 20 años
+            const esMarcaPermitida = marca !== "Alfa Romeo" && marca !== "Kia";
+            const esAntiguo = antiguedad > 20;
+
+            return esMarcaPermitida && esAntiguo;
+        });
+
+        // PASO 2: Ordenar por precio (índice 3) de mayor a menor
+        // Usamos [...] para crear una copia y no modificar el array original (inmutabilidad)
+        const cochesOrdenados = [...cochesFiltrados].sort((a, b) => {
+            const precioA = a[3];
+            const precioB = b[3];
+            return precioB - precioA; // Orden descendente
+        });
+
+        // PASO 3: Aplicar la rebaja del 20% (multiplicar por 0.8)
+        const cochesConDescuento = cochesOrdenados.map(coche => {
+            const precioOriginal = coche[3];
+            const nuevoPrecio = precioOriginal * 0.8;
+            
+            // Devolvemos un nuevo array con los datos transformados
+            return [coche[0], coche[1], coche[2], nuevoPrecio];
+        });
+
+        // REPRESENTACIÓN EN EL HTML (DOM)
+        const contenedor = document.getElementById('lista-coches');
+        
+        cochesConDescuento.forEach(c => {
+            const div = document.createElement('div');
+            div.className = 'card';
+            // c[0]=marca, c[1]=modelo, c[2]=año, c[3]=precio rebajado
+            div.innerHTML = `
+                <strong>${c[0].toUpperCase()} ${c[1]}</strong><br>
+                Año: ${c[2]} | 
+                Precio con 20% de descuento: <b>${c[3].toFixed(2)}€</b>
+            `;
+            contenedor.appendChild(div);
+        });
+    </script>
+</body>
+</html>

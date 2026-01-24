@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Arrays</title>
+    <style>
+        .ejercicio {
+            border: 1px black solid;
+            border-radius: 5px;
+        }
+
+        .resultado {
+            background-color: rgb(195, 192, 192);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">Ejercicios de Arrays</h1>
+    <div id="eje1" class="ejercicio">
+        <h3>Ejercicio 1</h3>
+        <p>Haz una función que de dos números pasados por parámetros indica (saca por consola) cúal de ellos es mayor.
+        </p>
+        <div class="resultado">
+            <!-- Aquí es dónde ira el teclado. -->
+            Resultado
+            <p></p>
+        </div>
+    </div>
+
+    <script>
+        function muestraResultado(id, result) {
+            // let pResult = document.querySelector('#'+id+' .resultado p');
+            //let pResult = document.querySelector(`#${id} .resultado p`);
+            let pResult = document.getElementById("pEje1");
+
+            pResult.textContent += result;
+        }
+
+        muestraResultado("eje1", "pepe");
+
+
+        sumarPares([2, 4, 5, 6, 7, 8, 3, 1, 10, 4])
+        function sumarPares(numeros) {
+            numeros
+        }
+    </script>
+</body>
+
+</html>
