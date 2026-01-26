@@ -126,6 +126,26 @@
             resultado += (multiplica(div, div), div)
             return resultado;
         }
+
+
+
+        (function () {
+            console.log("Ejecutando función anónima");
+            return "Genial!!";
+        })();
+        //Así sería un ejemplo con un parámetro:
+        (function (edad) {
+            console.log("Ejecutando función anónima");
+            return "Genial!!. Tu edad " + edad;
+        })(30);
+
+        function pintaEdad(edad) {
+            console.log("Ejecutando función anónima");
+            return "Genial!!. Tu edad " + edad;
+        }
+        pintaEdad(30);
+        pintaEdad(34);
+        pintaEdad(19);
     </script>
 </body>
 
