@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Timmers</h3>
+    <script>
+        const idTimeout = setTimeout(() => console.log('Timeout que se ejecuta al cabo de 7 seg.'), 7000);
+
+        //Creamos una función y pasamos parametro
+        function showMessage(msg) {
+            console.log(msg)
+        }
+
+        //especificamos la función que qeuremos que se ejecute, no la ejecitamos --> No ponemos ();
+        const idTimeoutF = setTimeout(showMessage, 1000, 'Timeout que se ejecuta al cabo de 1 seg.');
+
+        let i = 1;
+        const idInterval = setInterval(() => {
+            console.log('Interval cada 3 seg. Ejecución nº: ' + i++);
+            if (i === 5) {
+                clearInterval(idInterval);
+                console.log('Fin de la ejecución del Interval');
+            }
+        }, 3000);
+    </script>
+</body>
+
+</html>
