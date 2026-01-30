@@ -141,30 +141,45 @@ const alumnosJSON = `[
     }
   ]`;
 
-function visualizaAlumnos(){
+function visualizaAlumnos() {
   let alumnos = JSON.parse(alumnosJSON);
-  let texto="";
-  /*console.log(typeof(alumnos))
-  for(let alumno of alumnos){
-    console.log(alumno);
-  }*/
+  let texto = "";
 
+  let cabecera = "<tr>"
+  Object.keys(alumnos[0]).forEach((k) => {cabecera+=`<th>${k}</th>`;})
+  cabecera += "<th>Media</th></tr>";
 
-  let arrayAlumnos = Array.from(alumnos);
-  console.log(typeof(arrayAlumnos))
-  arrayAlumnos.forEach(alumno => 
-    {
-      texto+="<p>"
-      for(let key in alumno){
-        console.log(`${key} = ${alumno[key]}`);
-        texto+=`${key} = ${alumno[key]}`;
+  alumnos.forEach(alumno => {
+    alumno.calculaMedia = function () {
+      return Math.round((this.notam2 + this.notam3 + this.notam4 + this.notam5 + this.notam6 + this.notam9) / 6);
+    }
+  });
+
+  alumnos.forEach(alumno => {
+    texto += "<tr>"
+    for (let key in alumno) {
+      //console.log(`${key} = ${alumno[key]}`);
+      
+      if (key != "calculaMedia") {
+        texto += `<td>${alumno[key]}</td>`;
+      } else{
+        //añadimos el calculo de la media
+        texto += `<td>${alumno.calculaMedia()}</td>`;
+        texto += "</tr>"
       }
-      texto+="</p>"
-    });
-    let div = document.createElement("div");
-    div.innerHTML=texto;
-    document.body.appendChild(div);
+    }
+
+  });
+
+  let table = document.createElement("table");
+
+
+  table.innerHTML = cabecera + texto;
+
+  document.body.appendChild(table);
 
 }
+
+
 
 visualizaAlumnos();
