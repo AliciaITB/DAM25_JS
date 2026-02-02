@@ -167,4 +167,6 @@ function visualizaAlumnos(){
 
 }
 
-visualizaAlumnos();
+function init(){
+  visualizaAlumnos();
+}
